@@ -1,19 +1,8 @@
 import { Box, Flex, GridItem, Heading } from '@chakra-ui/react';
-import { useState } from 'react';
 function KeyButton(letter: any) {
-  const [currentInput, setCurrentInput] = useState(0);
-  const inputs = document.querySelectorAll('input');
-  const addLetter = (lettervalue: string) => {
-    inputs[currentInput].value = lettervalue;
-    console.log(currentInput);
-    setCurrentInput(currentInput + 1);
-  };
   return (
     <GridItem
       colSpan={letter.letter == 'ENTER' || letter.letter == 'BACK' ? 2 : 0}
-      onClick={() => {
-        addLetter(letter.letter);
-      }}
       cursor='pointer'
     >
       <Flex

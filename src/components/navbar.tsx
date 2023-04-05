@@ -9,7 +9,7 @@ function Navbar() {
       borderColor={'whiteAlpha.400'}
     >
       <Heading fontWeight={700} size='xl'>
-        Wordle
+        WORDLE
       </Heading>
     </Flex>
   );

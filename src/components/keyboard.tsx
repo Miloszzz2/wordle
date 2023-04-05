@@ -32,7 +32,7 @@ function Keyboard() {
     'BACK',
   ];
   return (
-    <Flex justify='center' marginTop='100px'>
+    <Flex justify='center' marginTop='70px'>
       <Grid gap='10px' templateColumns='repeat(10, 50px)'>
         {keyboardElements.map((item) => {
           return <KeyButton key={item} letter={item}></KeyButton>;
