@@ -1,7 +1,11 @@
 export type Letters = {
-  one: string;
-  two: string;
-  three: string;
-  four: string;
-  five: string;
+  one: LetterItem;
+  two: LetterItem;
+  three: LetterItem;
+  four: LetterItem;
+  five: LetterItem;
+};
+export type LetterItem = {
+  letter: string;
+  color: string;
 };

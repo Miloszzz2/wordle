@@ -17,56 +17,66 @@ function InputEl() {
                 h='70px'
                 minWidth='70px'
                 width='70px'
-                fontSize='3rem'
+                fontSize='2.4rem'
                 textAlign='center'
                 maxLength={1}
                 textTransform='uppercase'
+                fontWeight='600'
                 readOnly
-                value={item.one}
+                value={item.one.letter}
+                bgColor={item.one.color}
               />
               <Input
                 h='70px'
                 minWidth='70px'
                 width='70px'
-                fontSize='3rem'
+                fontSize='2.4rem'
                 textAlign='center'
                 maxLength={1}
                 textTransform='uppercase'
+                fontWeight='600'
                 readOnly
-                value={item.two}
+                value={item.two.letter}
+                bgColor={item.two.color}
               />
               <Input
                 h='70px'
                 minWidth='70px'
                 width='70px'
-                fontSize='3rem'
+                fontSize='2.4rem'
                 textAlign='center'
                 textTransform='uppercase'
+                fontWeight='600'
                 maxLength={1}
                 readOnly
-                value={item.three}
+                value={item.three.letter}
+                bgColor={item.three.color}
               />
               <Input
                 h='70px'
                 minWidth='70px'
                 width='70px'
-                fontSize='3rem'
+                fontSize='2.4rem'
                 textAlign='center'
                 textTransform='uppercase'
+                fontWeight='600'
                 maxLength={1}
                 readOnly
-                value={item.four}
+                value={item.four.letter}
+                bgColor={item.four.color}
               />
               <Input
                 h='70px'
                 minWidth='70px'
                 width='70px'
-                fontSize='3rem'
+                fontSize='2.4rem'
                 textAlign='center'
+                fontWeight='600'
                 textTransform='uppercase'
                 maxLength={1}
                 readOnly
-                value={item.five}
+                value={item.five.letter}
+                bgColor={item.five.color}
               />
             </Flex>
           );
