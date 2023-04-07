@@ -9,10 +9,10 @@ import {
 import KeyButton from './key';
 import { useId } from 'react';
 import { useEffect, useContext, useState } from 'react';
-import useWordleLogic from '../hooks/wordlelogic';
-import { LetterContext } from '../context/letterscontext';
-import { ContextProps } from '../types/contextprops';
-import { words } from '../constants/words';
+import useWordleLogic from '../../hooks/wordlelogic';
+import { LetterContext } from '../../context/letterscontext';
+import { ContextProps } from '../../types/contextprops';
+import { words } from '../../constants/words';
 function Keyboard() {
   const toast = useToast();
   const {

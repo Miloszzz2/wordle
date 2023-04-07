@@ -1,7 +1,7 @@
 import { Flex, Heading } from '@chakra-ui/react';
-import { LetterContext } from '../context/letterscontext';
+import { LetterContext } from '../../context/letterscontext';
 import { useContext } from 'react';
-import { ContextProps } from '../types/contextprops';
+import { ContextProps } from '../../types/contextprops';
 function Navbar() {
   const { wordToGuess } = useContext(LetterContext) as ContextProps;
   return (

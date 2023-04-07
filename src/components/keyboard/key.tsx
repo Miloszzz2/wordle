@@ -1,6 +1,6 @@
 import { Flex, GridItem, Heading, Button } from '@chakra-ui/react';
-import { KeyboardElement } from '../types/keyboardelement';
-import useWordleLogic from '../hooks/wordlelogic';
+import { KeyboardElement } from '../../types/keyboardelement';
+import useWordleLogic from '../../hooks/wordlelogic';
 function KeyButton({
   keyLetter,
   color,

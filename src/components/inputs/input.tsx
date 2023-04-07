@@ -1,10 +1,10 @@
 import { Flex, Input } from '@chakra-ui/react';
 import { useContext } from 'react';
-import useWordleLogic from '../hooks/wordlelogic';
-import { Letters } from '../types/letters';
+import useWordleLogic from '../../hooks/wordlelogic';
+import { Letters } from '../../types/letters';
 import { useId } from 'react';
-import { LetterContext } from '../context/letterscontext';
-import { ContextProps } from '../types/contextprops';
+import { LetterContext } from '../../context/letterscontext';
+import { ContextProps } from '../../types/contextprops';
 function InputEl() {
   const { rowLetters } = useContext(LetterContext) as ContextProps;
   return (

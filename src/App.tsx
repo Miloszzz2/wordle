@@ -1,7 +1,7 @@
 import './App.css';
-import Navbar from './components/navbar';
-import Inputs from './components/inputs';
-import Keyboard from './components/keyboard';
+import Navbar from './components/navbar/navbar';
+import Inputs from './components/inputs/inputs';
+import Keyboard from './components/keyboard/keyboard';
 import LettersContextProvider from './context/letterscontext';
 function App() {
   return (
