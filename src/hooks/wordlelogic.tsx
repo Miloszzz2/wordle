@@ -4,13 +4,21 @@ import { LetterContext } from '../context/letterscontext';
 import { ContextProps } from '../types/contextprops';
 import { useToast } from '@chakra-ui/react';
 const useWordleLogic = () => {
-  const { rowLetters, setRowLetters, wordToGuess, keyboardElements } =
-    useContext(LetterContext) as ContextProps;
+  const {
+    rowLetters,
+    setRowLetters,
+    wordToGuess,
+    keyboardElements,
+    setIsGameWon,
+  } = useContext(LetterContext) as ContextProps;
   const [currentcolumn, setCurrentColumn] = useState<number>(0);
   const [currentrow, setCurrentRow] = useState<number>(0);
+  const [redLetters, setRedLetters] = useState<string[]>([]);
+  const [greenLetters, setGreenLetters] = useState<string[]>([]);
+  const [yellowLetters, setYellowLetters] = useState<string[]>([]);
   const toast = useToast();
   const addLetter = (letter: any) => {
-    let pos: string = '';
+    var pos: string = '' as const;
     switch (currentcolumn) {
       case 0:
         pos = 'one';
@@ -31,11 +39,12 @@ const useWordleLogic = () => {
     setRowLetters((rowLetters) =>
       rowLetters.map((item, index) => {
         if (index === currentrow) {
-          return { ...item, [pos]: { letter: letter } };
+          return { ...item, [pos]: { letter: letter, color: ' ' } };
         } else return item;
       })
     );
     setCurrentColumn((currentcolumn) => currentcolumn + 1);
+    console.log(pos);
   };
 
   const moveToNextRow = () => {
@@ -88,9 +97,10 @@ const useWordleLogic = () => {
           item.four.letter === wordToGuess[3] &&
           item.five.letter === wordToGuess[4]
         ) {
+          setIsGameWon(true);
           toast({
             title: 'Brawo wygrałeś',
-            status: 'info',
+            status: 'success',
             duration: 9000,
             isClosable: true,
           });
@@ -100,6 +110,7 @@ const useWordleLogic = () => {
   };
   const checkFirstLetter = (item: Letters) => {
     if (item.one.letter === wordToGuess[0]) {
+      setGreenLetters((greenLetters) => [...greenLetters, item.one.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -111,6 +122,7 @@ const useWordleLogic = () => {
         })
       );
     } else if (wordToGuess.includes(item.one.letter)) {
+      setYellowLetters((yellowLetters) => [...yellowLetters, item.one.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -122,6 +134,7 @@ const useWordleLogic = () => {
         })
       );
     } else {
+      setRedLetters((losingletters) => [...losingletters, item.one.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -137,6 +150,7 @@ const useWordleLogic = () => {
 
   const checkSecondLetter = (item: Letters) => {
     if (item.two.letter === wordToGuess[1]) {
+      setGreenLetters((greenLetters) => [...greenLetters, item.two.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -148,6 +162,7 @@ const useWordleLogic = () => {
         })
       );
     } else if (wordToGuess.includes(item.two.letter)) {
+      setYellowLetters((yellowLetters) => [...yellowLetters, item.two.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -159,6 +174,7 @@ const useWordleLogic = () => {
         })
       );
     } else {
+      setRedLetters((losingletters) => [...losingletters, item.two.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -174,6 +190,7 @@ const useWordleLogic = () => {
 
   const checkThirdLetter = (item: Letters) => {
     if (item.three.letter === wordToGuess[2]) {
+      setGreenLetters((greenLetters) => [...greenLetters, item.three.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -185,6 +202,10 @@ const useWordleLogic = () => {
         })
       );
     } else if (wordToGuess.includes(item.three.letter)) {
+      setYellowLetters((yellowLetters) => [
+        ...yellowLetters,
+        item.three.letter,
+      ]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -196,6 +217,7 @@ const useWordleLogic = () => {
         })
       );
     } else {
+      setRedLetters((losingletters) => [...losingletters, item.three.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -211,6 +233,7 @@ const useWordleLogic = () => {
 
   const checkFourLetter = (item: Letters) => {
     if (item.four.letter === wordToGuess[3]) {
+      setGreenLetters((greenLetters) => [...greenLetters, item.four.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -222,6 +245,7 @@ const useWordleLogic = () => {
         })
       );
     } else if (wordToGuess.includes(item.four.letter)) {
+      setYellowLetters((yellowLetters) => [...yellowLetters, item.four.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -233,6 +257,7 @@ const useWordleLogic = () => {
         })
       );
     } else {
+      setRedLetters((losingletters) => [...losingletters, item.four.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -248,6 +273,7 @@ const useWordleLogic = () => {
 
   const checkFiveLetter = (item: Letters) => {
     if (item.five.letter === wordToGuess[4]) {
+      setGreenLetters((greenLetters) => [...greenLetters, item.five.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -259,6 +285,7 @@ const useWordleLogic = () => {
         })
       );
     } else if (wordToGuess.includes(item.five.letter)) {
+      setYellowLetters((yellowLetters) => [...yellowLetters, item.five.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -270,6 +297,7 @@ const useWordleLogic = () => {
         })
       );
     } else {
+      setRedLetters((losingletters) => [...losingletters, item.five.letter]);
       setRowLetters((rowLetters) =>
         rowLetters.map((item, index) => {
           if (index === currentrow) {
@@ -299,6 +327,9 @@ const useWordleLogic = () => {
     setCurrentColumn,
     removeLetter,
     checkWord,
+    redLetters,
+    yellowLetters,
+    greenLetters,
   };
 };
 export default useWordleLogic;

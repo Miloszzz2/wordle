@@ -6,6 +6,7 @@ import { KeyboardElement } from '../types/keyboardelement';
 export const LetterContext = createContext<ContextProps | null>(null);
 function LettersContextProvider({ children }: any) {
   const [wordToGuess, setWordToGuess] = useState<string>('');
+  const [isGameWon, setIsGameWon] = useState<boolean>(false);
   useEffect(() => {
     setWordToGuess(words[Math.floor(Math.random() * words.length)]);
   }, [setWordToGuess]);
@@ -79,7 +80,14 @@ function LettersContextProvider({ children }: any) {
   ]);
   return (
     <LetterContext.Provider
-      value={{ rowLetters, setRowLetters, wordToGuess, keyboardElements }}
+      value={{
+        rowLetters,
+        setRowLetters,
+        wordToGuess,
+        keyboardElements,
+        isGameWon,
+        setIsGameWon,
+      }}
     >
       {children}
     </LetterContext.Provider>
