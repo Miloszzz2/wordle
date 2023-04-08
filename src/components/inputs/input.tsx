@@ -1,12 +1,20 @@
-import { Flex, Input } from '@chakra-ui/react';
+import { Flex, Input, useColorMode } from '@chakra-ui/react';
 import { useContext } from 'react';
 import useWordleLogic from '../../hooks/wordlelogic';
-import { Letters } from '../../types/letters';
+import { LetterItem, Letters } from '../../types/letters';
 import { useId } from 'react';
 import { LetterContext } from '../../context/letterscontext';
 import { ContextProps } from '../../types/contextprops';
+import { Letter } from '../../types/letter';
 function InputEl() {
+  const { colorMode } = useColorMode();
   const { rowLetters } = useContext(LetterContext) as ContextProps;
+  const checkColor = (item: LetterItem) => {
+    if (colorMode === 'light' && item.color !== '') {
+      return 'white';
+    } else if (colorMode === 'dark') return 'white';
+    else return 'black';
+  };
   return (
     <Flex flexDirection='column'>
       {rowLetters &&
@@ -25,6 +33,14 @@ function InputEl() {
                 readOnly
                 value={item.one.letter}
                 bgColor={item.one.color}
+                borderColor={
+                  colorMode === 'light' ? 'gray.400' : 'whiteAlpha.300'
+                }
+                _hover={{
+                  borderColor:
+                    colorMode === 'light' ? 'gray.400' : 'whiteAlpha.300',
+                }}
+                color={checkColor(item.one)}
               />
               <Input
                 h='70px'
@@ -38,6 +54,14 @@ function InputEl() {
                 readOnly
                 value={item.two.letter}
                 bgColor={item.two.color}
+                borderColor={
+                  colorMode === 'light' ? 'gray.400' : 'whiteAlpha.300'
+                }
+                _hover={{
+                  borderColor:
+                    colorMode === 'light' ? 'gray.400' : 'whiteAlpha.300',
+                }}
+                color={checkColor(item.two)}
               />
               <Input
                 h='70px'
@@ -51,6 +75,14 @@ function InputEl() {
                 readOnly
                 value={item.three.letter}
                 bgColor={item.three.color}
+                borderColor={
+                  colorMode === 'light' ? 'gray.400' : 'whiteAlpha.300'
+                }
+                _hover={{
+                  borderColor:
+                    colorMode === 'light' ? 'gray.400' : 'whiteAlpha.300',
+                }}
+                color={checkColor(item.three)}
               />
               <Input
                 h='70px'
@@ -64,6 +96,14 @@ function InputEl() {
                 readOnly
                 value={item.four.letter}
                 bgColor={item.four.color}
+                borderColor={
+                  colorMode === 'light' ? 'gray.400' : 'whiteAlpha.300'
+                }
+                _hover={{
+                  borderColor:
+                    colorMode === 'light' ? 'gray.400' : 'whiteAlpha.300',
+                }}
+                color={checkColor(item.four)}
               />
               <Input
                 h='70px'
@@ -77,6 +117,14 @@ function InputEl() {
                 readOnly
                 value={item.five.letter}
                 bgColor={item.five.color}
+                borderColor={
+                  colorMode === 'light' ? 'gray.400' : 'whiteAlpha.300'
+                }
+                _hover={{
+                  borderColor:
+                    colorMode === 'light' ? 'gray.400' : 'whiteAlpha.300',
+                }}
+                color={checkColor(item.five)}
               />
             </Flex>
           );

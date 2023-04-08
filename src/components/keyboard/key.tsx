@@ -31,6 +31,7 @@ function KeyButton({
         h='100%'
         fontSize='1.3rem'
         fontWeight='bold'
+        color='white'
         bgColor={checkColor()}
         _hover={{ bgColor: color === 'green.600' ? 'green.700' : 'gray.700' }}
       >

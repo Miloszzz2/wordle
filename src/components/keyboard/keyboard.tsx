@@ -58,7 +58,7 @@ function Keyboard() {
       removeLetter();
     }
   };
-  console.log(currentWord);
+  console.log(rowLetters);
   useEffect(() => {
     document.addEventListener('keydown', keyDownHandler);
 

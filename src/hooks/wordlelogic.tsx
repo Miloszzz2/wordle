@@ -39,7 +39,7 @@ const useWordleLogic = () => {
     setRowLetters((rowLetters) =>
       rowLetters.map((item, index) => {
         if (index === currentrow) {
-          return { ...item, [pos]: { letter: letter, color: ' ' } };
+          return { ...item, [pos]: { letter: letter, color: '' } };
         } else return item;
       })
     );
