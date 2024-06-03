@@ -1,11 +1,9 @@
 import { Flex, Input, useColorMode } from '@chakra-ui/react';
 import { useContext } from 'react';
-import useWordleLogic from '../../hooks/wordlelogic';
 import { LetterItem, Letters } from '../../types/letters';
 import { useId } from 'react';
 import { LetterContext } from '../../context/letterscontext';
 import { ContextProps } from '../../types/contextprops';
-import { Letter } from '../../types/letter';
 function InputEl() {
   const { colorMode } = useColorMode();
   const { rowLetters } = useContext(LetterContext) as ContextProps;

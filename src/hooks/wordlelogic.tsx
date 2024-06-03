@@ -4,13 +4,9 @@ import { LetterContext } from '../context/letterscontext';
 import { ContextProps } from '../types/contextprops';
 import { useToast } from '@chakra-ui/react';
 const useWordleLogic = () => {
-  const {
-    rowLetters,
-    setRowLetters,
-    wordToGuess,
-    keyboardElements,
-    setIsGameWon,
-  } = useContext(LetterContext) as ContextProps;
+  const { rowLetters, setRowLetters, wordToGuess, setIsGameWon } = useContext(
+    LetterContext
+  ) as ContextProps;
   const [currentcolumn, setCurrentColumn] = useState<number>(0);
   const [currentrow, setCurrentRow] = useState<number>(0);
   const [redLetters, setRedLetters] = useState<string[]>([]);

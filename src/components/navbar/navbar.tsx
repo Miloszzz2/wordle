@@ -5,24 +5,15 @@ import {
   Icon,
   useColorMode,
 } from '@chakra-ui/react';
-import { LetterContext } from '../../context/letterscontext';
-import { useContext } from 'react';
-import { ContextProps } from '../../types/contextprops';
 import { SettingsIcon, InfoOutlineIcon } from '@chakra-ui/icons';
 import SettingsModal from './settingsmodal';
 import InfoModal from './infomodal';
 function Navbar() {
-  const { wordToGuess } = useContext(LetterContext) as ContextProps;
   const {
     isOpen: isOpenInfoModal,
     onOpen: onOpenInfoModal,
     onClose: onCloseInfoModal,
   } = useDisclosure({ defaultIsOpen: true });
-  const {
-    isOpen: isOpenLeaderboardModal,
-    onOpen: onOpenLeaderboardModal,
-    onClose: onCloseLeaderboardModal,
-  } = useDisclosure();
   const {
     isOpen: isOpenSettingsModal,
     onOpen: onOpenSettingsModal,

@@ -1,11 +1,4 @@
-import {
-  Box,
-  Container,
-  Flex,
-  Grid,
-  GridItem,
-  useToast,
-} from '@chakra-ui/react';
+import { Flex, Grid, GridItem, useToast } from '@chakra-ui/react';
 import KeyButton from './key';
 import { useId } from 'react';
 import { useEffect, useContext, useState } from 'react';
