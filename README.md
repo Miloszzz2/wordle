@@ -29,7 +29,7 @@ Make sure you have Node.js and npm installed. You can download them from [here](
 
 ### Clone the repository
 ```bash
-git clone https://github.com/yourusername/wordle-app.git
+git clone https://github.com/Miloszzz2/wordle-app.git
 cd wordle-app
 ```
 
