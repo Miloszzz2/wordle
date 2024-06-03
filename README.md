@@ -8,8 +8,6 @@ A clone of the popular word puzzle game Wordle, built with React, Framer Motion 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Demo
 ![image](https://github.com/Miloszzz2/wordle/assets/97192271/12a46ac8-dd22-45fb-a5d4-d660d58edd87)
