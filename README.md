@@ -57,5 +57,4 @@ This will create an optimized production build of the app in the \`build\` folde
 - [Chakra UI](https://chakra-ui.com/)
 
 
-## License
-Distributed under the MIT License. See \`LICENSE\` for more information.
+
